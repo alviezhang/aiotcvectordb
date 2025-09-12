@@ -1,0 +1,110 @@
+interactions:
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: GET
+    uri: http://vdb.local/database/list
+  response:
+    body:
+      string: '{"code": 0, "msg": "Operation success", "databases": ["testing_aio"],
+        "info": {"testing_aio": {"createTime": "2025-09-12 15:17:44", "dbType": "BASE_DB",
+        "count": 1}}}'
+    headers:
+      Content-Length:
+      - '1143'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: GET
+    uri: http://vdb.local/database/list
+  response:
+    body:
+      string: '{"code": 0, "msg": "Operation success", "databases": ["testing_aio"],
+        "info": {"testing_aio": {"createTime": "2025-09-12 15:17:44", "dbType": "BASE_DB",
+        "count": 1}}}'
+    headers:
+      Content-Length:
+      - '1143'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: GET
+    uri: http://vdb.local/database/list
+  response:
+    body:
+      string: '{"code": 0, "msg": "Operation success", "databases": ["testing_aio"],
+        "info": {"testing_aio": {"createTime": "2025-09-12 15:17:44", "dbType": "BASE_DB",
+        "count": 1}}}'
+    headers:
+      Content-Length:
+      - '1143'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: GET
+    uri: http://vdb.local/database/list
+  response:
+    body:
+      string: '{"code": 0, "msg": "Operation success", "databases": ["testing_aio"],
+        "info": {"testing_aio": {"createTime": "2025-09-12 15:17:44", "dbType": "BASE_DB",
+        "count": 1}}}'
+    headers:
+      Content-Length:
+      - '1143'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: GET
+    uri: http://vdb.local/database/list
+  response:
+    body:
+      string: '{"code": 0, "msg": "Operation success", "databases": ["testing_aio"],
+        "info": {"testing_aio": {"createTime": "2025-09-12 15:17:44", "dbType": "BASE_DB",
+        "count": 1}}}'
+    headers:
+      Content-Length:
+      - '1143'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: GET
+    uri: http://vdb.local/database/list
+  response:
+    body:
+      string: '{"code": 0, "msg": "Operation success", "databases": ["testing_aio"],
+        "info": {"testing_aio": {"createTime": "2025-09-12 15:17:44", "dbType": "BASE_DB",
+        "count": 1}}}'
+    headers:
+      Content-Length:
+      - '1143'
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,497 @@
+interactions:
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: GET
+    uri: http://vdb.local/database/list
+  response:
+    body:
+      string: '{"code": 0, "msg": "Operation success", "databases": ["testing_aio"],
+        "info": {"testing_aio": {"createTime": "2025-09-12 15:17:44", "dbType": "BASE_DB",
+        "count": 1}}}'
+    headers:
+      Content-Length:
+      - '1143'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":15302,"msg":"Collection not exist: pytest_8cd58821_test_search_vectors_shape_coll"}'
+    headers:
+      Content-Length:
+      - '91'
+      Content-Type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/create
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":1}'
+    headers:
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_8cd58821_test_search_vectors_shape_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:50:41","description":"","indexes":[{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":3,"metricType":"COSINE","params":{"M":8,"efConstruction":80}},{"fieldName":"id","fieldType":"string","indexType":"primaryKey"},{"fieldName":"tag","fieldType":"string","indexType":"filter"},{"fieldName":"page","fieldType":"uint64","indexType":"filter"}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '639'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_8cd58821_test_search_vectors_shape_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:50:41","description":"","indexes":[{"fieldName":"id","fieldType":"string","indexType":"primaryKey"},{"fieldName":"page","fieldType":"uint64","indexType":"filter"},{"fieldName":"tag","fieldType":"string","indexType":"filter"},{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":3,"metricType":"COSINE","params":{"M":8,"efConstruction":80}}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '639'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/document/upsert
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":3}'
+    headers:
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_8cd58821_test_search_vectors_shape_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:50:41","description":"","indexes":[{"fieldName":"tag","fieldType":"string","indexType":"filter"},{"fieldName":"page","fieldType":"uint64","indexType":"filter"},{"fieldName":"id","fieldType":"string","indexType":"primaryKey"},{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":3,"metricType":"COSINE","params":{"M":8,"efConstruction":80}}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '639'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/document/search
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","documents":[[{"id":"v1","score":1.0},{"id":"v2","score":0.99988}],[{"id":"v3","score":1.0},{"id":"v1","score":0.26726}]]}'
+    headers:
+      Content-Length:
+      - '158'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/drop
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":1}'
+    headers:
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: GET
+    uri: http://vdb.local/database/list
+  response:
+    body:
+      string: '{"code": 0, "msg": "Operation success", "databases": ["testing_aio"],
+        "info": {"testing_aio": {"createTime": "2025-09-12 15:17:44", "dbType": "BASE_DB",
+        "count": 1}}}'
+    headers:
+      Content-Length:
+      - '1143'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":15302,"msg":"Collection not exist: pytest_b14b33c4_test_search_vectors_shape_coll"}'
+    headers:
+      Content-Length:
+      - '91'
+      Content-Type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/create
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":1}'
+    headers:
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_b14b33c4_test_search_vectors_shape_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:51:15","description":"","indexes":[{"fieldName":"page","fieldType":"uint64","indexType":"filter"},{"fieldName":"id","fieldType":"string","indexType":"primaryKey"},{"fieldName":"tag","fieldType":"string","indexType":"filter"},{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":3,"metricType":"COSINE","params":{"M":8,"efConstruction":80}}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '639'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_b14b33c4_test_search_vectors_shape_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:51:15","description":"","indexes":[{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":3,"metricType":"COSINE","params":{"M":8,"efConstruction":80}},{"fieldName":"tag","fieldType":"string","indexType":"filter"},{"fieldName":"page","fieldType":"uint64","indexType":"filter"},{"fieldName":"id","fieldType":"string","indexType":"primaryKey"}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '639'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/document/upsert
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":3}'
+    headers:
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_b14b33c4_test_search_vectors_shape_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:51:15","description":"","indexes":[{"fieldName":"tag","fieldType":"string","indexType":"filter"},{"fieldName":"page","fieldType":"uint64","indexType":"filter"},{"fieldName":"id","fieldType":"string","indexType":"primaryKey"},{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":3,"metricType":"COSINE","params":{"M":8,"efConstruction":80}}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '639'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/document/search
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","documents":[[{"id":"v1","score":1.0},{"id":"v2","score":0.99988}],[{"id":"v3","score":1.0},{"id":"v1","score":0.26726}]]}'
+    headers:
+      Content-Length:
+      - '158'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/drop
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":1}'
+    headers:
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: GET
+    uri: http://vdb.local/database/list
+  response:
+    body:
+      string: '{"code": 0, "msg": "Operation success", "databases": ["testing_aio"],
+        "info": {"testing_aio": {"createTime": "2025-09-12 15:17:44", "dbType": "BASE_DB",
+        "count": 1}}}'
+    headers:
+      Content-Length:
+      - '1143'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":15302,"msg":"Collection not exist: pytest_5d567231_test_search_vectors_shape_coll"}'
+    headers:
+      Content-Length:
+      - '91'
+      Content-Type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/create
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":1}'
+    headers:
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_5d567231_test_search_vectors_shape_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:54:35","description":"","indexes":[{"fieldName":"id","fieldType":"string","indexType":"primaryKey"},{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":3,"metricType":"COSINE","params":{"M":8,"efConstruction":80}},{"fieldName":"page","fieldType":"uint64","indexType":"filter"},{"fieldName":"tag","fieldType":"string","indexType":"filter"}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '639'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_5d567231_test_search_vectors_shape_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:54:35","description":"","indexes":[{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":3,"metricType":"COSINE","params":{"M":8,"efConstruction":80}},{"fieldName":"tag","fieldType":"string","indexType":"filter"},{"fieldName":"page","fieldType":"uint64","indexType":"filter"},{"fieldName":"id","fieldType":"string","indexType":"primaryKey"}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '639'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/document/upsert
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":3}'
+    headers:
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_5d567231_test_search_vectors_shape_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:54:35","description":"","indexes":[{"fieldName":"id","fieldType":"string","indexType":"primaryKey"},{"fieldName":"page","fieldType":"uint64","indexType":"filter"},{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":3,"metricType":"COSINE","params":{"M":8,"efConstruction":80}},{"fieldName":"tag","fieldType":"string","indexType":"filter"}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '639'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/document/search
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","documents":[[{"id":"v1","score":1.0},{"id":"v2","score":0.99988}],[{"id":"v3","score":1.0},{"id":"v1","score":0.26726}]]}'
+    headers:
+      Content-Length:
+      - '158'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/drop
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":1}'
+    headers:
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

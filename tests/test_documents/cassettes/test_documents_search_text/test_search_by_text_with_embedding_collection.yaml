@@ -1,0 +1,167 @@
+interactions:
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: GET
+    uri: http://vdb.local/database/list
+  response:
+    body:
+      string: '{"code": 0, "msg": "Operation success", "databases": ["testing_aio"],
+        "info": {"testing_aio": {"createTime": "2025-09-12 15:17:44", "dbType": "BASE_DB",
+        "count": 1}}}'
+    headers:
+      Content-Length:
+      - '1143'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":15302,"msg":"Collection not exist: pytest_955e5e3a_test_search_by_text_with_embedding_collection_embed_coll"}'
+    headers:
+      Content-Length:
+      - '117'
+      Content-Type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/create
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":1}'
+    headers:
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_955e5e3a_test_search_by_text_with_embedding_collection_embed_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:55:36","embedding":{"field":"text","vectorField":"vector","model":"bge-base-zh","status":"enabled"},"description":"","indexes":[{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":768,"metricType":"COSINE","params":{"M":16,"efConstruction":200}},{"fieldName":"id","fieldType":"string","indexType":"primaryKey"}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '637'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_955e5e3a_test_search_by_text_with_embedding_collection_embed_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:55:36","embedding":{"field":"text","vectorField":"vector","model":"bge-base-zh","status":"enabled"},"description":"","indexes":[{"fieldName":"id","fieldType":"string","indexType":"primaryKey"},{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":768,"metricType":"COSINE","params":{"M":16,"efConstruction":200}}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '637'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/document/upsert
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":2,"embeddingExtraInfo":{"tokenUsed":10}}'
+    headers:
+      Content-Length:
+      - '92'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/describe
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","collection":{"database":"testing_aio","collection":"pytest_955e5e3a_test_search_by_text_with_embedding_collection_embed_coll","documentCount":0,"replicaNum":1,"shardNum":1,"createTime":"2025-09-12
+        17:55:36","embedding":{"field":"text","vectorField":"vector","model":"bge-base-zh","status":"enabled"},"description":"","indexes":[{"fieldName":"id","fieldType":"string","indexType":"primaryKey"},{"fieldName":"vector","fieldType":"vector","indexType":"HNSW","indexedCount":0,"dimension":768,"metricType":"COSINE","params":{"M":16,"efConstruction":200}}],"indexStatus":{"status":"ready","startTime":""}}}'
+    headers:
+      Content-Length:
+      - '637'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/document/search
+  response:
+    body:
+      string: "{\"code\":0,\"msg\":\"Operation success\",\"documents\":[[{\"id\":\"t_apple\",\"score\":0.87206,\"text\":\"\u82F9\u679C\u5F88\u597D\u5403\"}]],\"embeddingExtraInfo\":{\"tokenUsed\":2}}"
+    headers:
+      Content-Length:
+      - '147'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      backend-service:
+      - vdb
+    method: POST
+    uri: http://vdb.local/collection/drop
+  response:
+    body:
+      string: '{"code":0,"msg":"Operation success","affectedCount":1}'
+    headers:
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
