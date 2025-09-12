@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  lint-and-test:
+    name: Lint and Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+
+    env:
+      # Provide required env for tests; VCR replays with sanitized host/db
+      TCVECTORDB_URL: http://vdb.local
+      TCVECTORDB_USERNAME: root
+      TCVECTORDB_KEY: dummy_key
+      TCVECTORDB_DATABASE: testing_aio
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install dependencies (app + dev)
+        run: uv sync --group dev
+
+      - name: Lint (ruff)
+        run: |
+          uv run ruff check .
+          # Uncomment to enforce formatting once repository is formatted
+          # uv run ruff format --check .
+
+      - name: Run tests (pytest)
+        run: uv run pytest -q
+
