@@ -1,6 +1,6 @@
 [project]
 name = "aiotcvectordb"
-version = "0.1.1-dev"
+version = "0.1.1"
 description = "Tencent VectorDB Python Async SDK"
 authors = [{ name = "Alvie Zhang" }]
 readme = "README.md"
